@@ -22,10 +22,10 @@ highlight_code = true
 description = "Edward Tan's personal website"
 
 # User settings
-username = "Cool Page"
-user_description = "Anon Developer at Lorem Ipsum Dolor"
-user_title = "cool man"
+username = "Edward Tan "
+user_description = "Playing with Rust"
+user_title = ""
 email = "guofoo@gmail.com"
 twitter_username = "guofoo"
 github_username = "guofoo"
-gplus_username = "lorem_ipsum"
+# gplus_username = "lorem_ipsum"

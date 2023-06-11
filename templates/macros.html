@@ -14,7 +14,7 @@
 
 {% macro footer() %}
 <footer class="footer">
-    <p>&copy; {{ config.extra.username }}</p>
+    <!-- <p>&copy; {{ config.extra.username }}</p> -->
     <p>Ported to Zola with <span class="love">❤</span> by <a href="https://github.com/svavs">Silvano Sallese</a> (original by <a href="https://github.com/nrandecker">Nathan Randecker</a>)</p>
 </footer>
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -30,17 +30,17 @@
         <span class="site-description">{{ config.extra.user_title | linebreaksbr | safe }}</span>
       </h1>
       <div class="header-icons">
-        <a aria-label="Send email" href="#"><i class="icon fa fa-envelope"></i></a>
-        <a aria-label="My Twitter" target="_blank" href="#"><i class="icon fa fa-twitter" aria-hidden="true"></i></a>
-        <a aria-label="My Google Plus" target="_blank" href="#"><i class="icon fa fa-google-plus" aria-hidden="true"></i></a>
-        <a aria-label="My Github" target="_blank" href="#"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
+        <a aria-label="Send email" href="mailto:{{ config.extra.email }}"><i class="icon fa fa-envelope"></i></a>
+        <a aria-label="My Twitter" target="_blank" href="https://twitter.com/{{ config.extra.twitter_username }}"><i class="icon fa fa-twitter" aria-hidden="true"></i></a>
+        <!-- <a aria-label="My Google Plus" target="_blank" href="#"><i class="icon fa fa-google-plus" aria-hidden="true"></i></a> -->
+        <a aria-label="My Github" target="_blank" href="https://github.com/{{ config.extra.github_username }}"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
       </div>
-      <div class="header-links">
+      <!-- <div class="header-links">
         <a class="link" href="#about" data-scroll>About Me</a>
         <a class="link" href="#projects" data-scroll>Projects</a>
-      </div>
+      </div> -->
   </div>
-  <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+  <!-- <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a> -->
 </div>
 {% endmacro header %}
 
