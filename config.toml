@@ -4,6 +4,20 @@ base_url = "https://edwardtan.com"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
+# The taxonomies to be rendered for the site and their configuration of the default languages
+# Example:
+#     taxonomies = [
+#       {name = "tags", feed = true}, # each tag will have its own feed
+#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
+#       {name = "categories", paginate_by = 5},  # 5 items per page for a term
+#       {name = "authors"}, # Basic definition: no feed or pagination
+#     ]
+#
+taxonomies = [
+    { name = "categories", feed = true, paginate_by = 10 },
+    { name = "tags", feed = true, paginate_by = 10 },
+]
+
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
@@ -22,10 +36,51 @@ highlight_code = true
 description = "Edward Tan's personal website"
 
 # User settings
-username = "Edward Tan "
+username = "Edward Tan"
 user_description = "Playing with Rust"
 user_title = ""
 email = "guofoo@gmail.com"
 twitter_username = "guofoo"
 github_username = "guofoo"
-# gplus_username = "lorem_ipsum"
+
+katex.enabled = true
+katex.auto_render = true
+
+chart.enabled = true
+mermaid.enabled = true
+galleria.enabled = true
+
+navbar_items = [
+    { code = "en", nav_items = [
+        { url = "$BASE_URL/", name = "Home" },
+        { url = "$BASE_URL/posts", name = "Blog" },
+        # { url = "$BASE_URL/docs", name = "Docs" },
+        # { url = "$BASE_URL/tags", name = "Tags" },
+        # { url = "$BASE_URL/categories", name = "Categories" },
+    ] },
+]
+
+[extra.favicon]
+favicon_16x16 = "/icons/favicon-16x16.png"
+favicon_32x32 = "/icons/favicon-32x32.png"
+apple_touch_icon = "/icons/apple-touch-icon.png"
+safari_pinned_tab = "/icons/safari-pinned-tab.svg"
+webmanifest = "/icons/site.webmanifest"
+
+[extra.author]
+name = "Edward Tan"
+avatar = "images/avatar.png"
+
+[extra.social]
+email = "guofoo@gmail.com"
+twitter = "guofoo"
+
+[extra.analytics]
+google = "G-CYN87JXFL3"
+
+# [extra.commenting]
+# disqus = "deepthought-theme"
+
+# [extra.mapbox]
+# enabled = true
+# access_token = "pk.xxx"
