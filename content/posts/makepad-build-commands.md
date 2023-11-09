@@ -19,7 +19,7 @@ Here are the current/latest instructions on how to build and run Makepad applica
 We will assume the following:
 Name of application: `Sample_App`
 
-It should be changed to any one of the existing example apps in the [*project-robius*](https://github.com/project-robius) repository.
+It should be changed to any one of the existing example apps in the [Project Robius](https://github.com/project-robius) repository.
 
 ## Build & Run Instructions
 
@@ -93,7 +93,7 @@ Open either the Android emulator or connect to a real Android device
 use `adb` command to make sure there's a single device connected properly, then install and run as below:
 
 ```sh
-~/projects/Sample_App
+cd ~/projects/Sample_App
 cargo makepad android run -p Sample_App --release
 ```
 

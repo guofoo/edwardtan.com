@@ -1,11 +1,9 @@
 +++
 title="Makepad Commands Quick Reference"
 date=2023-11-09
-# [taxonomies]
 +++
 
-
-Yesterday I wrote a post detailing specific instructions on how to build and run Makepad apps on IOS and Android devices. This post is a quick reference that lists most the commands, including sample commands for specific  apps in the [*project-robius*](https://github.com/project-robius) repo.
+Yesterday I wrote a post detailing specific instructions on how to build and run Makepad apps on IOS and Android devices. This post is a quick reference that lists most the commands, including sample commands for specific  apps in the [Project Robius](https://github.com/project-robius) repo.
 
 For more detailed descriptions, please see:
 [Makepad Build Commands](https://edwardtan.com/posts/makepad-build-commands/)
