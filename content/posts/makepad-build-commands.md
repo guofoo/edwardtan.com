@@ -7,17 +7,17 @@ date=2023-11-08
 # tags = ["post", "makepad"]
 +++
 
-Makepad is a cross-platform UI framework written in Rust.
+[Makepad](https://github.com/makepad/makepad) is a cross-platform UI framework written in Rust.
 It is in active development, but is already usable to build quick prototypes and simple (or even complicated UI) applications.
 
 One of the key features of the Makepad is its ability to simply, and quickly, build and run applications on multiple platforms, including MacOS, Windows, Linux, Android, iOS, and WebAssembly.
 
-Here are the current/latest instructions on how to build and run Makepad applications.
+Here are the current/latest instructions on how to build and run Makepad applications on the different platforms.
 
 ## Assumptions
 
 We will assume the following:
-Name of application: `New_App`
+Name of application: `Sample_App`
 
 It should be changed to any one of the existing example apps in the [*project-robius*](https://github.com/project-robius) repository.
 
@@ -30,60 +30,60 @@ After step 2, you may choose any one or more of the platforms you're interested 
 
 Replace `projects` with your own directory name.
 
-```
+```SHELL
 cd ~/projects
 ```
 
 ### Clone the Makepad repository
 
-```
+```SHELL
 git clone https://github.com/makepad/makepad.git
 ```
 
 or
 
-```
+```SHELL
 git clone git@github.com:makepad/makepad.git
 ```
 
 ### Change to latest 'rik' branch (Optional)
 
-```
+```SHELL
 git branch rik
 ```
 
 ### Install makepad subcommand for cargo
 
-```
+```SHELL
 cd ~/projects/makepad
 cargo install --path ./tools/cargo_makepad
 ```
 
 ### Install platform toolchains
 
-```
+```SHELL
 rustup toolchain install nightly
 ```
 
 ## 2. Get Project
 
-### Clone the `New_App` repo
+### Clone the `Sample_App` repo
 
-```
-git clone https://github.com/project-robius/New_App.git
+```SHELL
+git clone https://github.com/project-robius/Sample_App.git
 ```
 
 or
 
-```
-git clone git@github.com:project-robius/New_App.git
+```SHELL
+git clone git@github.com:project-robius/Sample_App.git
 ```
 
 ## 3. Android Build
 
 ### Install Android toolchain (First time)
 
-```
+```SHELL
 cargo makepad android install-toolchain
 ```
 
@@ -92,9 +92,9 @@ cargo makepad android install-toolchain
 Open either the Android emulator or connect to a real Android device
 use `adb` command to make sure there's a single device connected properly, then install and run as below:
 
-```
-~/projects/New_App
-cargo makepad android run -p New_App --release
+```SHELL
+~/projects/Sample_App
+cargo makepad android run -p Sample_App --release
 ```
 
 The application will be installed and launch on either the emulator or device.
@@ -103,7 +103,7 @@ The application will be installed and launch on either the emulator or device.
 
 ### Install IOS toolchain (First time)
 
-```
+```SHELL
 xcode-select --install
 cargo makepad apple ios install-toolchain
 ```
@@ -118,7 +118,7 @@ For iOS, the process is slightly more complicated. The steps involved are:
 1. Setup an Apple Developer account
 1. Setup an empty skeleton project in XCode
     1. File -> New -> Project to create a new "App"
-    1. Set the Product Name as **`NewApp`**  (used in --org later)
+    1. Set the Product Name as **`SampleApp`**  (used in --org later)
     1. Set the Organization Identifier to a value of your choice, for this example we will use **`rs.robius`**. (used in --app later)
     1. Setup the Project Signing & Capabilities to select the proper team account
 1. In XCode, Build/Run this project to install and run the app on the simulator and device
@@ -137,12 +137,12 @@ This is the same value used to setup the initial skeleton app above. For this ex
 **`--app`**
 
 The name of the application or the project. This is the same as the Product Name used to setup the initial skeleton app above. In this case:
-> `NewApp`
+> `SampleApp`
 
 **`--org-id`** (real-device only)
 
 This is the <string> value of the ApplicationIdentifierPrefix <key> in the `**.mobileprovision` file located in the `~/Library/MobileDevice/Provisioning Profiles` directory.
-It should be a 10 digit alphanumeric value.
+It should be a 10 digit alpha-numeric value.
 
 **`--ios-version`** (OPTIONAL)
 
@@ -150,20 +150,20 @@ defaults to 17. Set it to 16 or other values if the device is not running iOS 17
 
 ### Example
 
-For this example, we have the Bundle Identifier of **`rs.robius.NewApp`**
+For this example, we have the Bundle Identifier of **`rs.robius.SampleApp`**
 
 ### Install app on IOS simulator
 
-```
-cd ~/projects/New_App
-cargo makepad apple ios --org=rs.robius --app=NewApp run-sim -p New_App --release
+```SHELL
+cd ~/projects/Sample_App
+cargo makepad apple ios --org=rs.robius --app=SampleApp run-sim -p Sample_App --release
 ```
 
 ### Install app on IOS device
 
-```
-cd ~/projects/New_App
-cargo makepad apple ios --ios-version=16 --org-id=<ORGIDVALUE> --org=rs.robius --app=NewApp run-device -p New_App --release
+```SHELL
+cd ~/projects/Sample_App
+cargo makepad apple ios --ios-version=16 --org-id=<ORGIDVALUE> --org=rs.robius --app=SampleApp run-device -p Sample_App --release
 ```
 
 The application will be installed and launch on either the emulator or device.
@@ -176,7 +176,7 @@ The application will be installed and launch on either the emulator or device.
 
 Although it is a mobile app, Makepad cross-platform means you may run it on desktops if you wish.
 
-```
-cd ~/projects/New_App
+```SHELL
+cd ~/projects/Sample_App
 cargo run
 ```
