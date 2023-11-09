@@ -30,38 +30,38 @@ After step 2, you may choose any one or more of the platforms you're interested 
 
 Replace `projects` with your own directory name.
 
-```SHELL
+```sh
 cd ~/projects
 ```
 
 ### Clone the Makepad repository
 
-```SHELL
+```sh
 git clone https://github.com/makepad/makepad.git
 ```
 
 or
 
-```SHELL
+```sh
 git clone git@github.com:makepad/makepad.git
 ```
 
 ### Change to latest 'rik' branch (Optional)
 
-```SHELL
+```sh
 git branch rik
 ```
 
 ### Install makepad subcommand for cargo
 
-```SHELL
+```sh
 cd ~/projects/makepad
 cargo install --path ./tools/cargo_makepad
 ```
 
 ### Install platform toolchains
 
-```SHELL
+```sh
 rustup toolchain install nightly
 ```
 
@@ -69,13 +69,13 @@ rustup toolchain install nightly
 
 ### Clone the `Sample_App` repo
 
-```SHELL
+```sh
 git clone https://github.com/project-robius/Sample_App.git
 ```
 
 or
 
-```SHELL
+```sh
 git clone git@github.com:project-robius/Sample_App.git
 ```
 
@@ -83,7 +83,7 @@ git clone git@github.com:project-robius/Sample_App.git
 
 ### Install Android toolchain (First time)
 
-```SHELL
+```sh
 cargo makepad android install-toolchain
 ```
 
@@ -92,7 +92,7 @@ cargo makepad android install-toolchain
 Open either the Android emulator or connect to a real Android device
 use `adb` command to make sure there's a single device connected properly, then install and run as below:
 
-```SHELL
+```sh
 ~/projects/Sample_App
 cargo makepad android run -p Sample_App --release
 ```
@@ -103,7 +103,7 @@ The application will be installed and launch on either the emulator or device.
 
 ### Install IOS toolchain (First time)
 
-```SHELL
+```sh
 xcode-select --install
 cargo makepad apple ios install-toolchain
 ```
@@ -154,14 +154,14 @@ For this example, we have the Bundle Identifier of **`rs.robius.SampleApp`**
 
 ### Install app on IOS simulator
 
-```SHELL
+```sh
 cd ~/projects/Sample_App
 cargo makepad apple ios --org=rs.robius --app=SampleApp run-sim -p Sample_App --release
 ```
 
 ### Install app on IOS device
 
-```SHELL
+```sh
 cd ~/projects/Sample_App
 cargo makepad apple ios --ios-version=16 --org-id=<ORGIDVALUE> --org=rs.robius --app=SampleApp run-device -p Sample_App --release
 ```
@@ -176,7 +176,7 @@ The application will be installed and launch on either the emulator or device.
 
 Although it is a mobile app, Makepad cross-platform means you may run it on desktops if you wish.
 
-```SHELL
+```sh
 cd ~/projects/Sample_App
 cargo run
 ```
