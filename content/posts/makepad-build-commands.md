@@ -30,38 +30,39 @@ After step 2, you may choose any one or more of the platforms you're interested 
 
 Replace `projects` with your own directory name.
 
-```sh
+```bash
 cd ~/projects
 ```
 
 ### Clone the Makepad repository
 
-```sh
+```bash
 git clone https://github.com/makepad/makepad.git
 ```
 
 or
 
-```sh
+```bash
 git clone git@github.com:makepad/makepad.git
 ```
 
 ### Change to latest 'rik' branch (Optional)
 
-```sh
+```bash
+cd ~/projects/makepad
 git branch rik
 ```
 
 ### Install makepad subcommand for cargo
 
-```sh
+```bash
 cd ~/projects/makepad
 cargo install --path ./tools/cargo_makepad
 ```
 
 ### Install platform toolchains
 
-```sh
+```bash
 rustup toolchain install nightly
 ```
 
@@ -69,21 +70,32 @@ rustup toolchain install nightly
 
 ### Clone the `Sample_App` repo
 
-```sh
+```bash
 git clone https://github.com/project-robius/Sample_App.git
 ```
 
 or
 
-```sh
+```bash
 git clone git@github.com:project-robius/Sample_App.git
 ```
 
-## 3. Android Build
+## 3. MacOS / PC
+
+Running on Desktop is the quickest way to try out an example app. 
+
+```bash
+cd ~/projects/Sample_App
+cargo run
+```
+
+And there should be a desktop application window now running (may need to click on the icon on MacOS's Dock to show it)
+
+## 4. Android Build
 
 ### Install Android toolchain (First time)
 
-```sh
+```bash
 cargo makepad android install-toolchain
 ```
 
@@ -92,18 +104,18 @@ cargo makepad android install-toolchain
 Open either the Android emulator or connect to a real Android device
 use `adb` command to make sure there's a single device connected properly, then install and run as below:
 
-```sh
+```bash
 cd ~/projects/Sample_App
 cargo makepad android run -p Sample_App --release
 ```
 
 The application will be installed and launch on either the emulator or device.
 
-## 4. iOS Setup & Install
+## 5. iOS Setup & Install
 
 ### Install IOS toolchain (First time)
 
-```sh
+```bash
 xcode-select --install
 cargo makepad apple ios install-toolchain
 ```
@@ -118,8 +130,8 @@ For iOS, the process is slightly more complicated. The steps involved are:
 1. Setup an Apple Developer account
 1. Setup an empty skeleton project in XCode
     1. File -> New -> Project to create a new "App"
-    1. Set the Product Name as **`SampleApp`**  (used in --org later)
-    1. Set the Organization Identifier to a value of your choice, for this example we will use **`rs.robius`**. (used in --app later)
+    1. Set the Product Name as **`SampleApp`** (used in --org later)
+    1. Set the Organization Identifier to a value of your choice, for this example we will use **`rs.robius`** (used in --app later)
     1. Setup the Project Signing & Capabilities to select the proper team account
 1. In XCode, Build/Run this project to install and run the app on the simulator and device
 1. Once the simulator and device has the "skeleton" app installed and running properly, then it is ready for Makepad to install its application.
@@ -130,7 +142,7 @@ We will run the `cargo makepad apple ios` command, similar to Android build abov
 
 **`--org`**
 
-First few parts of the organization identifier (which makes up the Bundle Identifier). Usually in the form of **com.somecompany** or **org.someorg**
+First few parts of the organization identifier (which makes up the Bundle Identifier). Usually in the form of *com.somecompany* or *org.someorg*, etc.
 This is the same value used to setup the initial skeleton app above. For this example:
 > `rs.robius`
 
@@ -141,12 +153,12 @@ The name of the application or the project. This is the same as the Product Name
 
 **`--org-id`** (real-device only)
 
-This is the <string> value of the ApplicationIdentifierPrefix <key> in the `**.mobileprovision` file located in the `~/Library/MobileDevice/Provisioning Profiles` directory.
-It should be a 10 digit alpha-numeric value.
+Find the `<key>ApplicationIdentifierPrefix</key>` and use the value in the `<string>ORGIDVALUE</string>`, from the newest `**.mobileprovision` file located in the `~/Library/MobileDevice/Provisioning Profiles` directory.
+`ORGIDVALUE` should be a 10 digit alpha-numeric value.
 
-**`--ios-version`** (OPTIONAL)
+**`--ios-version`** (Optional)
 
-defaults to 17. Set it to 16 or other values if the device is not running iOS 17.
+Defaults to 17. Set it to 16 or other values if the device is not running iOS 17.
 
 ### Example
 
@@ -154,29 +166,20 @@ For this example, we have the Bundle Identifier of **`rs.robius.SampleApp`**
 
 ### Install app on IOS simulator
 
-```sh
+```bash
 cd ~/projects/Sample_App
 cargo makepad apple ios --org=rs.robius --app=SampleApp run-sim -p Sample_App --release
 ```
 
 ### Install app on IOS device
 
-```sh
+```bash
 cd ~/projects/Sample_App
-cargo makepad apple ios --ios-version=16 --org-id=<ORGIDVALUE> --org=rs.robius --app=SampleApp run-device -p Sample_App --release
+cargo makepad apple ios --org-id=ORGIDVALUE --org=rs.robius --app=SampleApp run-device -p Sample_App --release
 ```
 
 The application will be installed and launch on either the emulator or device.
 
-## 5. WASM Build
+## 6. WASM Build
 
-*Coming Soon*
-
-## 6. MacOS / PC
-
-Although it is a mobile app, Makepad cross-platform means you may run it on desktops if you wish.
-
-```sh
-cd ~/projects/Sample_App
-cargo run
-```
+*To Be Updated*
