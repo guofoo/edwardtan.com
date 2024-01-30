@@ -59,6 +59,29 @@
   {% endif %}
   {% endblock analytics %}
 
+  {% block seo -%}
+    <meta property="og:site_name" content="{% block ogsitename %}{{config.title}}{% endblock ogsitename %}">
+    {% if config.extra.author -%}
+    <meta name="author" content="{{ config.extra.author.name }}" />
+    {%- endif %}
+    <meta property="og:title" content="{% block ogtitle %}{{config.title}}{% endblock ogtitle %}">
+    <meta property="og:description" content="{% block ogdesc %}{{config.description}}{% endblock ogdesc %}">
+    <meta property="og:url" content="{% block ogurl %}{{config.base_url | safe }}{% endblock ogurl %}">
+    <meta property="og:image" content="{% block ogimage %}{% if config.extra.ogimage %}{{ get_url(path=config.extra.ogimage) | safe }}{% endif %}{% endblock ogimage %}">
+
+    {% if page.date -%}
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="{{ page.date | date(format=" %+") }}" />
+    {%- endif %}
+
+    {% if page.earlier -%}
+    <link rel="prev" href="{{ page.earlier.permalink | safe }}" />
+    {%- endif %}
+    {% if page.later -%}
+    <link rel="next" href="{{ page.later.permalink | safe }}" />
+    {%- endif %}
+  {%- endblock seo -%}
+
   {% if config.extra.katex.enabled %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>

@@ -1,3 +1,7 @@
+# Site title
+title = "Edward Tan"
+# Site settings
+description = "Edward Tan`s Website"
 # The URL the site will be built for
 base_url = "https://edwardtan.com"
 
@@ -30,11 +34,6 @@ theme = "particle-zola"
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
-
-# Site settings
-description = "Edward Tan's personal website"
-
 # User settings
 username = "Edward Tan"
 user_description = "Playing with Rust"

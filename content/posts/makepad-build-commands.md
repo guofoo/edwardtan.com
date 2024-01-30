@@ -82,7 +82,7 @@ git clone git@github.com:project-robius/Sample_App.git
 
 ## 3. MacOS / PC
 
-Running on Desktop is the quickest way to try out an example app. 
+Running on Desktop is the quickest way to try out an example app.
 
 ```bash
 cd ~/projects/Sample_App
@@ -128,12 +128,12 @@ For iOS, the process is slightly more complicated. The steps involved are:
 
 1. Enable your iPhone's Developer Mode, please see instructions here: [Enable Developer Mode](https://www.delasign.com/blog/how-to-turn-on-developer-mode-on-an-iphone/)
 1. Setup an Apple Developer account
-1. Setup an empty skeleton project in XCode
+1. Setup an empty skeleton project in Xcode
     1. File -> New -> Project to create a new "App"
-    1. Set the Product Name as **`SampleApp`** (used in --org later)
-    1. Set the Organization Identifier to a value of your choice, for this example we will use **`rs.robius`** (used in --app later)
+    1. Set the Product Name as **`SampleApp`** (used in --app later)
+    1. Set the Organization Identifier to a value of your choice, for this example we will use **`rs.robius`** (used in --org later)
     1. Setup the Project Signing & Capabilities to select the proper team account
-1. In XCode, Build/Run this project to install and run the app on the simulator and device
+1. In Xcode, Build/Run this project to install and run the app on the simulator and device
 1. Once the simulator and device has the "skeleton" app installed and running properly, then it is ready for Makepad to install its application.
 
 ### Makepad Install
@@ -182,4 +182,5 @@ The application will be installed and launch on either the emulator or device.
 
 ## 6. WASM Build
 
-*To Be Updated*
+*Coming Soon*
+
