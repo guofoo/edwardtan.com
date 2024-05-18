@@ -73,6 +73,7 @@ avatar = "images/avatar.png"
 [extra.social]
 email = "guofoo@gmail.com"
 twitter = "guofoo"
+mastodon = "@guofoo"
 
 [extra.analytics]
 google = "G-CYN87JXFL3"
