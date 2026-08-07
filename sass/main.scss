@@ -1,6 +1,7 @@
+// Font Awesome and devicon are deliberately not imported here: the homepage's five
+// icons are inlined as SVG in templates/macros.html. Blog pages load Font Awesome
+// from the CDN via templates/base.html.
 @import "lib/normalize";
-@import "lib/fontawesome/fontawesome";
-@import "lib/devicon";
 
 @import 'particle/base';
 @import 'particle/vars';

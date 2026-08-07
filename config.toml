@@ -74,6 +74,7 @@ avatar = "images/avatar.png"
 
 [extra.social]
 email = "guofoo@gmail.com"
+bluesky = "guofoo.bsky.social"
 twitter = "guofoo"
 mastodon = "@guofoo"
 
